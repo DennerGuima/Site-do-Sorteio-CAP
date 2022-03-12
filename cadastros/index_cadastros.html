@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block titulo %}
+<title>Cadastros</title>
+{% endblock%}
+
+{%load crispy_forms_tags%}
+
+{% block conteudo %}
+<h1 class="h3 mb-4 text-gray-800">Faça o seu Cadastro</h1>
+       
+    <form method = POST action = "">
+          
+        {% csrf_token %}
+
+       
+
+        <table class = "table">
+
+            <tr>
+                <td style="width:14%" scope="row"> {{ form.cpf | as_crispy_field }} </td>
+                <td style="width:17%" scope="row"> {{ form.dn | as_crispy_field }} </td>
+                <td style="width:30%" scope="row"> {{ form.rua | as_crispy_field }} </td>
+                <td style="width:14%" scope="row"> {{ form.numero | as_crispy_field }} </td>
+                <td style="width:40%" scope="row"> {{ form.bairro | as_crispy_field }} </td>
+            </tr>
+          
+        </table>
+        <table class = "table">
+            <tr>
+                <td style="width:10%" scope="row"> {{ form.turma | as_crispy_field }} </td>
+                <td style="width:30%" scope="row"> {{ form.nome_resp | as_crispy_field }} </td>
+                <td style="width:10%" scope="row"> {{ form.sexo | as_crispy_field }} </td>
+                <td style="width:20%" scope="row"> {{ form.telefone | as_crispy_field }} </td>
+                <td style="width:30%" scope="row"> {{ form.email | as_crispy_field }} </td>
+            </tr>
+        
+        </table>
+
+                <div class = "text-right">
+                  <button type = "submit" class = "save bnt bnt-success">Salvar</button>
+                </div>
+    </form>
+
+
+
+{% endblock %}
